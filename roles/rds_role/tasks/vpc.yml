@@ -1,0 +1,11 @@
+- name: create a VPC 
+  amazon.aws.ec2_vpc_net:
+    name: Module_dev2
+    cidr_block: 10.10.0.0/16
+    region: ca-central-1
+    state: present
+  register: vpc_result
+
+- name: Display VPC ID
+  debug:
+    var: vpc_result.vpc.id

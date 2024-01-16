@@ -1,0 +1,10 @@
+---
+- name: Create Aurora Cluster in the created VPC
+  amazon.aws.rds_cluster:
+    cluster_id: "{{ cluster_id }}"
+    engine: "{{ engine }}"
+    master_user_password: "{{ password }}"
+    master_username: "{{ username }}"
+    engine_version: "{{ engine_version }}"
+    db_subnet_group_name: "{{ my_subnet_group.subnet_group.db_subnet_group_name }}"
+    state: present

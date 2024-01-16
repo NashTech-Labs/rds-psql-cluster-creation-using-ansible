@@ -1,0 +1,11 @@
+---
+# vars file for rds_role
+vpc_name: "MyVPC"  # Set your desired VPC name
+vpc_cidr_block: "10.0.0.0/16"  # Set your desired CIDR block
+aws_region: "ca-central-1"  # Set your desired AWS region
+cluster_id: "my-aurora-cluster"  # Set your desired Aurora cluster ID
+username: "shahenvaz"  # Set your desired database username
+password: "shahenvaz"  #
+engine_version: 12.15
+engine: aurora-postgresql
+instance_type: db.r5.large

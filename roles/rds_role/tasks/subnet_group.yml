@@ -1,0 +1,9 @@
+- name: creating subnet group
+  amazon.aws.rds_subnet_group:
+    state: present
+    name: db-subnet-group
+    description: this subnet group will be used for rds.
+    subnets:
+      - "{{ subnet_1.subnet.id }}"
+      - "{{ subnet_2.subnet.id }}"
+  register: my_subnet_group

@@ -1,0 +1,6 @@
+- name: Create VPC and Aurora Cluster
+  hosts: localhost
+  gather_facts: false
+  roles:
+  - rds_role
+        

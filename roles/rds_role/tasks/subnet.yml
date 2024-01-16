@@ -1,0 +1,26 @@
+- name: Create subnet for database servers
+  amazon.aws.ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_result.vpc.id }}"
+    cidr: 10.10.1.0/24
+    tags:
+      Name: Subnet1
+  register: subnet_1
+
+- name: Display subnet1
+  debug:
+    var: subnet_1.subnet.id
+
+- name: Create subnet2
+  amazon.aws.ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_result.vpc.id }}"
+    cidr: 10.10.2.0/24
+    tags:
+      Name: Subnet2
+    az: ca-central-1a  
+  register: subnet_2
+
+- name: Display subnet2
+  debug:
+    var: subnet_2.subnet.id

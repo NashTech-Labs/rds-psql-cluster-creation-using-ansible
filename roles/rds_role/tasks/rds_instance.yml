@@ -1,0 +1,9 @@
+---
+- name: create minimal aurora instance in default VPC and default subnet group
+  amazon.aws.rds_instance:
+    engine: "{{ engine }}"
+    db_instance_identifier: ansible-test-aurora-db-instance
+    instance_type: "{{ intance_type }}"
+    cluster_id: "{{ cluster_id }}"
+    db_subnet_group_name: "{{ my_subnet_group.subnet_group.db_subnet_group_name }}"
+    state: present
